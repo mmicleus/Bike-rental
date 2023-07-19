@@ -1,0 +1,85 @@
+<form [formGroup]="form!">
+  <label class="form-label">First Name*</label>
+  <input type="text" class="form-control" formControlName="firstName" />
+  <span
+    >The name of the person making the booking. Not necessarily the person
+    participating</span
+  >
+  <div
+    *ngIf="
+      !form?.get('firstName')?.valid &&
+      (form?.get('firstName')?.touched || submitted)
+    "
+    class="mt-2 text-danger"
+  >
+    Please fill out this field
+  </div>
+
+  <br />
+  <label class="form-label mt-3">Surname*</label>
+  <input type="text" class="form-control" formControlName="surname" />
+  <div
+    *ngIf="
+      !form?.get('surname')?.valid &&
+      (form?.get('surname')?.touched || submitted)
+    "
+    class="mt-2 text-danger"
+  >
+    Please fill out this field
+  </div>
+
+  <label class="form-label mt-3">Email*</label>
+  <input type="text" class="form-control" formControlName="email" />
+  <div
+    *ngIf="
+      !form?.get('email')?.valid && (form?.get('email')?.touched || submitted)
+    "
+    class="mt-2 text-danger"
+  >
+    Please fill out this field
+  </div>
+
+  <label class="form-label mt-3">Phone*</label>
+  <input type="text" class="form-control mb-3" formControlName="phone" />
+  <div
+    *ngIf="
+      !form?.get('phone')?.valid && (form?.get('phone')?.touched || submitted)
+    "
+    class="mt-2 mb-2 text-danger"
+  >
+    Please fill out this field
+  </div>
+
+  <input type="checkbox" class="me-2" formControlName="joinList" />
+  <label>Join our ex-rental bike sale mailing list</label>
+
+  <hr />
+
+  <ng-content></ng-content>
+
+  <hr />
+
+  <a href="">View our Terms of Service</a>
+  <br />
+
+  <input type="checkbox" class="mt-4 mb-3" formControlName="termsAgreed" /> I
+  have read and agreed to the Terms of service
+
+  <div
+    *ngIf="
+      !form?.get('termsAgreed')?.valid &&
+      (form?.get('termsAgreed')?.touched || submitted)
+    "
+    class="mt-2 mb-2 text-danger"
+  >
+    Please check this box if you want to proceed.
+  </div>
+
+  <hr />
+
+  <div class="checkout-btn mb-5">
+    <button type="button" class="gray-banner" (click)="onSubmit()">
+      CHECKOUT NOW
+    </button>
+  </div>
+</form>

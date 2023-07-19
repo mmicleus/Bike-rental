@@ -1,0 +1,24 @@
+<div class="hero">
+  <span class="title">Bike Rental {{ utilityService.capitalize(town) }}</span>
+</div>
+<div class="hero-placeholder"></div>
+
+<div class="main">
+  <div class="left-column">
+    <p>
+      We provide high quality bike rental from
+      {{ utilityService.capitalize(town) }} mountain bike trails. We are located
+      at the trail head so just collect your bike and follow the signs.
+    </p>
+
+    <p>If you'de like a guided tour, click here</p>
+
+    <div class="bikes-container">
+      <app-bike *ngFor="let bike of bikes" [bike]="bike"> </app-bike>
+    </div>
+  </div>
+
+  <div class="right-column">
+    <app-booking-form [bikes]="bikes"></app-booking-form>
+  </div>
+</div>

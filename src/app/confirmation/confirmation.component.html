@@ -1,0 +1,44 @@
+<div *ngIf="bookings.length === 0; else main">
+  <h1>Confirm your bookings</h1>
+
+  <div class="message">
+    <p>You have nothing in your cart.</p>
+    <button class="gray-banner" (click)="browseInventory()">
+      BROWSE INVENTORY
+    </button>
+  </div>
+</div>
+
+<ng-template #main>
+  <h1>Confirm your bookings</h1>
+
+  <div class="container">
+    <div class="bookings-container">
+      <app-booking
+        *ngFor="let booking of bookings; let i = index"
+        [booking]="booking"
+        [isLast]="i === bookings.length - 1"
+        [index]="i"
+      >
+      </app-booking>
+    </div>
+    <div class="form-container">
+      <app-checkout-form>
+        <br />
+        <div>
+          <p class="d-flex justify-content-between rw fw-bold">
+            <span>Subtotal:</span> <span>€{{ getSubtotal().toFixed(2) }}</span>
+          </p>
+          <p class="d-flex justify-content-between rw fw-bold">
+            <span>Item Discount:</span> <span>€{{ 0.0 }}</span>
+          </p>
+          <p class="d-flex justify-content-between rw fw-bold">
+            <span>Total</span> <span>€{{ getSubtotal().toFixed(2) }}</span>
+          </p>
+        </div>
+
+        <br />
+      </app-checkout-form>
+    </div>
+  </div>
+</ng-template>

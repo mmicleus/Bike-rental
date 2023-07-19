@@ -1,0 +1,81 @@
+.header {
+  width: 100%;
+  margin: auto;
+  font-size: 2rem;
+}
+
+.quantity {
+  border: 1px solid lightgray;
+  padding: 0.5rem;
+}
+
+.quantity:focus {
+  outline: none;
+  border: 1px solid lightgray;
+}
+
+.quantity-btn {
+  border: 1px solid lightgray;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.timeframes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.timeframe {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 1px solid lightgray;
+  /* cursor: pointer; */
+  /* width: 47%; */
+}
+
+.timeframe.selected:not([disabled]) {
+  background-color: var(--clr-secondary);
+  border: 1px solid var(--clr-secondary);
+  color: var(--clr-primary);
+}
+
+.err-alert {
+  /* padding-top: 4rem; */
+
+  color: red;
+}
+
+.add-btn {
+  padding: 0.6rem 1rem 0.6rem 1rem;
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary);
+  font-weight: bold;
+  text-align: center;
+
+  outline: none;
+  border: none;
+}
+
+.alert-warning {
+  margin-top: 2rem;
+}
+
+.alert-warning .alert-btns {
+  color: #000;
+  margin-top: 1rem;
+}
+
+.alert-btns a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* 
+.timeframe.disabled{
+
+} */

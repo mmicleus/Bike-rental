@@ -1,0 +1,24 @@
+.navbar-brand > img {
+  width: 15rem;
+}
+
+.navbar {
+  background-color: transparent;
+  position: absolute;
+  /* left: 0; */
+  /* width: 100%;
+  max-width: 1200px; */
+}
+
+a.nav-link {
+  color: #fff;
+}
+
+a.cart {
+  color: gray;
+  font-weight: bold;
+}
+
+.navbar-placeholder {
+  height: 10rem;
+}

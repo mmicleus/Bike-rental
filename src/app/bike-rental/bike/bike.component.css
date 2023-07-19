@@ -1,0 +1,17 @@
+h1 {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+h1 a {
+  color: var(--clr-dark);
+}
+
+img {
+  width: 40rem;
+  margin-left: 3rem;
+}
+
+.container {
+  margin-bottom: 2rem;
+}

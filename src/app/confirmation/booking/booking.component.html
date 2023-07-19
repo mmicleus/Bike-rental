@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>
+    <span>{{ booking?.model }}</span>
+    <span>€{{ booking?.cost?.toFixed(2) }}</span>
+  </h1>
+
+  <span>{{ booking?.date }}</span>
+  <br />
+  <span>{{ booking?.time }}</span>
+
+  <p class="quantity">
+    <span class="fw-bold">Quantity:</span> {{ booking?.quantity }} @ €{{
+      booking?.price
+    }}
+  </p>
+
+  <a class="remove-btn" (click)="onRemove()">Remove</a>
+</div>
+
+<br />
+
+<hr *ngIf="!isLast" />

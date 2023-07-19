@@ -1,0 +1,44 @@
+.hero {
+  width: 100vw;
+  height: var(--hero-height);
+  background-image: url("https://biking.checkfront.com/media/L55-1--1653928017316951.jpg");
+  /* background-position: left -43px top -148px; */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: -1;
+
+  /* position: relative; */
+}
+
+.hero-placeholder {
+  height: var(--hero-height);
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+
+  color: var(--clr-primary);
+}
+
+.main {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.left-column {
+  width: 55%;
+}
+
+.right-column {
+  width: 35%;
+}

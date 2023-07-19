@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="header gray-banner">Book here</div>
+
+  <form [formGroup]="form">
+    <select class="form-select mt-5" formControlName="bikeOptions">
+      <option value="select your bike">SELECT YOUR BIKE</option>
+      <option
+        *ngFor="let bike of utilityService.getBikeOptions(bikes)"
+        [value]="bike"
+      >
+        {{ bike }}
+      </option>
+    </select>
+
+    <br />
+
+    <div class="d-flex justify-content-between">
+      <label>Quantity</label>
+
+      <div>
+        <button class="quantity-btn" (click)="minus()">-</button>
+        <input
+          formControlName="quantity"
+          type="text"
+          size="2"
+          class="quantity"
+        />
+        <button class="quantity-btn" (click)="plus()">+</button>
+      </div>
+    </div>
+
+    <br />
+
+    <input
+      type="date"
+      id="start"
+      name="trip-start"
+      [min]="utilityService.getCurrentDate()"
+      [max]="utilityService.getLaterDate(30)"
+      formControlName="date"
+    />
+
+    <div class="timeframes" #timeframes>
+      <button
+        class="timeframe selected"
+        [disabled]="!form.get('bikeOptions')?.valid"
+        (click)="onTimeframeClicked($event)"
+      >
+        10:00 am - 1:00pm
+      </button>
+      <button
+        class="timeframe"
+        [disabled]="!form.get('bikeOptions')?.valid"
+        (click)="onTimeframeClicked($event)"
+      >
+        10:00 am - 4:30pm
+      </button>
+      <button
+        class="timeframe"
+        [disabled]="!form.get('bikeOptions')?.valid"
+        (click)="onTimeframeClicked($event)"
+      >
+        1:30 pm - 4:30pm
+      </button>
+    </div>
+  </form>
+
+  <span *ngIf="form.get('quantity')?.errors?.['min']" class="err-alert"
+    >A minimum quantity of 1 required</span
+  >
+
+  <span class="err-alert" *ngIf="form.get('quantity')?.errors?.['max']"
+    >Only 9 available</span
+  >
+
+  <span class="err-alert" *ngIf="!form.touched">SELECT ABOVE</span>
+
+  <div class="receipt" *ngIf="form.touched && form.valid && !notificationOn">
+    <p>Quantity: {{ booking.quantity }} @ €{{ booking.price }}</p>
+
+    <br />
+    <br />
+
+    <p>Date:{{ booking.date }}</p>
+
+    <p>Time: {{ booking.time }}</p>
+
+    <br />
+
+    <hr />
+
+    <br />
+
+    <p>Subtotal: €{{ booking.cost }}</p>
+
+    <button class="add-btn" (click)="addToCart()">Add to cart</button>
+  </div>
+
+  <!-- ------------------------The notification---------------------- -->
+
+  <div
+    class="alert alert-warning alert-dismissible fade show"
+    role="alert"
+    *ngIf="notificationOn"
+  >
+    <strong>{{ booking.model }}</strong> has been successfully added to your
+    cart
+
+    <p class="alert-btns">
+      <a (click)="viewCart()">View Cart</a> or
+      <a (click)="onAlertClose()">continue shopping</a>
+    </p>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+      (click)="onAlertClose()"
+    ></button>
+  </div>
+</div>

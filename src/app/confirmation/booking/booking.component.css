@@ -1,0 +1,17 @@
+h1 {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.quantity {
+  margin-top: 1.5rem;
+}
+
+.remove-btn {
+  text-decoration: underline;
+  color: #000;
+  cursor: pointer;
+}

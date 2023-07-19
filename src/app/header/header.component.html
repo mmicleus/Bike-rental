@@ -1,0 +1,115 @@
+<nav class="navbar navbar-expand-lg responsive-container">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"
+      ><img
+        src="https://storage.googleapis.com/checkfront-rogue.appspot.com/accounts/cf-32277/images/2020/small-biking.ie-logo-1584654046513.png?alt=media&generation=1584654050358389"
+        alt="logo"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Bike Rental
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ticknock</a></li>
+            <li><a class="dropdown-item" href="#">Ballinastoe</a></li>
+            <!-- <li><hr class="dropdown-divider" /></li> -->
+            <li><a class="dropdown-item" href="#">Ex Rental Bikes</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Lessons
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Kickstarter</a></li>
+            <li><a class="dropdown-item" href="#">Core Skills</a></li>
+            <!-- <li><hr class="dropdown-divider" /></li> -->
+            <li><a class="dropdown-item" href="#">Trail Craft</a></li>
+            <li><a class="dropdown-item" href="#">Private Lesson</a></li>
+            <li><a class="dropdown-item" href="#">Bike Maintenance</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Tours
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Youth
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Workshop</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/auth" *ngIf="!loggedIn">Log In</a>
+          <a class="nav-link" id="logoutBtn"  *ngIf="loggedIn" (click)="logout()">Log Out</a>
+          
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link cart" href="#"
+            >Your Cart <span *ngIf="cartSize > 0">( {{ cartSize }} )</span></a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="navbar-placeholder"></div>
