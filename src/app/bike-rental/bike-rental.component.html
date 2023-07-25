@@ -3,7 +3,30 @@
 </div>
 <div class="hero-placeholder"></div>
 
-<div class="main">
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-7 order-2 order-md-1">
+      <p>
+        We provide high quality bike rental from
+        {{ utilityService.capitalize(town) }} mountain bike trails. We are located
+        at the trail head so just collect your bike and follow the signs.
+      </p>
+      <p class="mb-5">If you'de like a guided tour, click here</p>
+
+      <div class="bikes-container">
+        <app-bike *ngFor="let bike of bikes" [bike]="bike"> </app-bike>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-5 order-1 order-md-2"><app-booking-form [bikes]="bikes"></app-booking-form></div>
+    
+  </div>
+
+</div>
+
+<!-- <div class="main">
   <div class="left-column">
     <p>
       We provide high quality bike rental from
@@ -21,4 +44,4 @@
   <div class="right-column">
     <app-booking-form [bikes]="bikes"></app-booking-form>
   </div>
-</div>
+</div> -->

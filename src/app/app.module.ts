@@ -22,45 +22,47 @@ import { SuccessComponent } from './success/success.component';
 import { AuthComponent } from './authentication/auth/auth.component';
 import { AuthInterceptService } from './authentication/auth/auth-intercept.service';
 import { AuthGuard } from './authentication/auth/auth.guard';
+import { RoutingModule } from './routing.module';
 
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'ballinastoe',
-    pathMatch: 'full',
-  },
-  {
-    path: 'ballinastoe',
-    component: BikeRentalComponent,
-    data: { town: 'ballinastoe' },
-  },
-  {
-    path: 'ticknock',
-    component: BikeRentalComponent,
-    data: { town: 'ticknock' },
-  },
-  {
-    path: 'cart',
-    canActivate:[AuthGuard],
-    component: ConfirmationComponent,
-  },
-  {
-    path: 'success',
-    component: SuccessComponent,
-  },
-  {
-    path: 'not-found',
-    component: NotFoundComponent,
-  },
-  {
-    path:'auth',
-    component:AuthComponent
-  },
-  {
-    path: '**',
-    redirectTo: 'not-found',
-  },
-];
+
+// const routes: Routes = [
+//   {
+//     path: '',
+//     redirectTo: 'ballinastoe',
+//     pathMatch: 'full',
+//   },
+//   {
+//     path: 'ballinastoe',
+//     component: BikeRentalComponent,
+//     data: { town: 'ballinastoe' },
+//   },
+//   {
+//     path: 'ticknock',
+//     component: BikeRentalComponent,
+//     data: { town: 'ticknock' },
+//   },
+//   {
+//     path: 'cart',
+//     canActivate:[AuthGuard],
+//     component: ConfirmationComponent,
+//   },
+//   {
+//     path: 'success',
+//     component: SuccessComponent,
+//   },
+//   {
+//     path: 'not-found',
+//     component: NotFoundComponent,
+//   },
+//   {
+//     path:'auth',
+//     component:AuthComponent
+//   },
+//   {
+//     path: '**',
+//     redirectTo: 'not-found',
+//   },
+// ];
 
 @NgModule({
   declarations: [
@@ -78,10 +80,11 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule,
-    RouterModule.forRoot(routes),
+    // RouterModule,
+    // RouterModule.forRoot(routes),
     HttpClientModule,
     ReactiveFormsModule,
+    RoutingModule
   ],
   providers: [NetworkService, UtilityService, DataService,{provide:HTTP_INTERCEPTORS, useClass: AuthInterceptService, multi:true}],
   bootstrap: [AppComponent],

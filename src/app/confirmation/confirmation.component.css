@@ -16,15 +16,28 @@ h1 {
   column-gap: 2rem;
 }
 
-.form-container {
+/* .form-container {
   width: 40%;
 }
 
 .bookings-container {
   width: 50%;
-}
+} */
 
 .rw {
   width: 75%;
   margin-left: auto;
 }
+
+.flex-container{
+  display: flex;
+  row-gap:3rem;
+}
+
+@media screen and (max-width:900px){
+  .flex-container{
+    flex-direction: column;
+  }
+}
+
+

@@ -22,3 +22,9 @@ a.cart {
 .navbar-placeholder {
   height: 10rem;
 }
+
+@media screen and (max-width:600px){
+  .navbar-brand > img {
+    width: 12rem;
+  }
+}

@@ -12,17 +12,17 @@
 <ng-template #main>
   <h1>Confirm your bookings</h1>
 
-  <div class="container">
-    <div class="bookings-container">
+  <div class="flex-container justify-content-between">
+    <div>
       <app-booking
-        *ngFor="let booking of bookings; let i = index"
-        [booking]="booking"
-        [isLast]="i === bookings.length - 1"
-        [index]="i"
-      >
-      </app-booking>
+      *ngFor="let booking of bookings; let i = index"
+      [booking]="booking"
+      [isLast]="i === bookings.length - 1"
+      [index]="i"
+    >
+    </app-booking>
     </div>
-    <div class="form-container">
+    <div>
       <app-checkout-form>
         <br />
         <div>
